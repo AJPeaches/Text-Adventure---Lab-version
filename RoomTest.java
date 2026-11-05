@@ -10,8 +10,6 @@ public class RoomTest implements Serializable{
     private boolean isLocked;
     public static HashMap <String, ItemTest> ItemList = new HashMap<>();
     public static HashMap <String, String> RoomTestMap = new HashMap <>();//key is room name, room desc
-    public static HashMap <String, String> DialogueMap = new HashMap<>();//key is room name, dialogue interaction
-                          //Key is room name, value is desc
     public static HashMap <String, RoomTest> WorldExplored = new HashMap<>();
     
     public RoomTest (String n) {
@@ -30,12 +28,12 @@ public class RoomTest implements Serializable{
         return RoomTestMap.get(name);
     }
 
-    public String getDialogue(){
-        return DialogueMap.get(name);
-    }
-
     public RoomTest getExit (int d){
         return directions[d];
+    }
+
+    public void addItem(String name, ItemTest i){//i = item
+        ItemList.put(name, i);
     }
 
     public ItemTest getItem (String itemName){
@@ -53,16 +51,17 @@ public class RoomTest implements Serializable{
     public void addExit(RoomTest destination, int d){//d = direction, destination is room gone to with direction
         directions [d] = destination;//destination = directions [direction from index]
     }
-    public boolean checkIsLocked(){
-        return isLocked;
+
+    public boolean checkIsLocked(int doorIndex){
+        if (directions[doorIndex] == null){
+            return false;
+        }
+        else
+            return isLocked;
     }
     
-    public void setIsLocked(boolean lock){
+    public void setIsLocked(int doorIndex, boolean lock){
         isLocked = lock;
-    }
-
-    public void addItem(String name, ItemTest i){//i = item
-        ItemList.put(name, i);
     }
 
     public void setName(String whatName){

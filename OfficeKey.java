@@ -10,12 +10,11 @@ public class OfficeKey extends ItemTest{
     @Override 
     public void useItem(){
         if (GameTest.location.getName().equals("Living Room")){
-            if (GameTest.location.checkIsLocked(GameTest.location, 2) == true){
+            if (GameTest.location.checkIsLocked(3) == true){
                 GameTest.print("You used the office key to unlock the office!");
-                
                 GameTest.location.setIsLocked(2, false);
             }
-            else{
+            else {
                 GameTest.print("You already unlocked the office!");
             }
         }

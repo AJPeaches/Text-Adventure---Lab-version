@@ -13,6 +13,7 @@ public class TextAdventureGUITEST {
     private JTextArea roomDescArea, outputArea;
     private JTextField inputField;
     private JLabel RoomLabel;
+    private JButton InventoryButton;
 
     private Color backgroundColor = new Color(173, 121, 92); //light brown
     private Color textColor = new Color(80, 48, 48); // Dark Brown Color
@@ -44,6 +45,20 @@ public class TextAdventureGUITEST {
         RoomLabel = new JLabel("Location: " + location.getName());
         RoomLabel.setForeground(labelColor);
         RoomLabel.setFont(new Font("Courier New", Font.PLAIN, 20));
+
+        InventoryButton = new JButton("Inventory");
+        InventoryButton.setBackground(backgroundColor);
+        InventoryButton.setForeground(labelColor);
+        InventoryButton.setBorder(BorderFactory.createLineBorder(labelColor, 1));
+        InventoryButton.setFont(new Font("Courier New", Font.PLAIN, 20));
+        InventoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Handle inventory button click
+                outputArea.append(GameTest.getInventory());
+            }
+        });
+        statsPanel.add(InventoryButton);
         statsPanel.add(RoomLabel);
         statsPanel.setBorder(BorderFactory.createLineBorder(labelColor, 3));
 
@@ -120,7 +135,8 @@ public class TextAdventureGUITEST {
         roomDescArea.setText(""); // Clear previous room description
         RoomLabel.setText("Location: " + GameTest.getLocation().getName());
         roomDescArea.setText(GameTest.getLocation().getDesc());
-        outputArea.append(GameTest.getLocation().getDialogue());
+        outputArea.append(GameTest.getInputLog());
+        outputArea.append("\n"+text);
     }
 
         // // 4. Setup the Action / Choice Button Panel

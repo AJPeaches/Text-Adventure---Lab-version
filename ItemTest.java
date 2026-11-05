@@ -21,7 +21,7 @@ public class ItemTest implements Serializable{
     }
     
     public void useItem(){
-        GameTest.print("You cannot use this item here!");
+        GameTest.print("You cannot use that item here!");
     }
 
     public boolean isHeavy(){
