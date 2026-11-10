@@ -167,7 +167,7 @@ public class GameTest{
                         return;
                 }//End Switch case
                 if (location.getExit(way) != null){
-                    if (location.getExit(way).checkIsLocked(way) == true){
+                    if (location.getExit(way).checkIsLocked() == true){
                         GameTest.print("The door is locked!");
                         return;
                     }

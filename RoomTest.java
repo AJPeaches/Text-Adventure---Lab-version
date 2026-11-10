@@ -14,7 +14,7 @@ public class RoomTest implements Serializable{
     
     public RoomTest (String n) {
     name = n;
-    directions = new RoomTest[6];//array name = neww object array[index #]
+    directions = new RoomTest[6];//array name = new object array[index #]
     WorldExplored.put(n,this);
     isLocked = false;
     //index = east, west, north, south, up, down. Null is default
@@ -30,6 +30,10 @@ public class RoomTest implements Serializable{
 
     public RoomTest getExit (int d){
         return directions[d];
+    }
+
+    public void addExit(RoomTest destination, int d){//d = direction, destination is room gone to with direction
+        directions [d] = destination;//destination = directions [direction from index]
     }
 
     public void addItem(String name, ItemTest i){//i = item
@@ -48,19 +52,11 @@ public class RoomTest implements Serializable{
         ItemList.remove(name);
     }
 
-    public void addExit(RoomTest destination, int d){//d = direction, destination is room gone to with direction
-        directions [d] = destination;//destination = directions [direction from index]
-    }
-
-    public boolean checkIsLocked(int doorIndex){
-        if (directions[doorIndex] == null){
-            return false;
-        }
-        else
-            return isLocked;
+    public boolean checkIsLocked(){
+        return isLocked;
     }
     
-    public void setIsLocked(int doorIndex, boolean lock){
+    public void setIsLocked(boolean lock){
         isLocked = lock;
     }
 
