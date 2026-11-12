@@ -136,6 +136,10 @@ public class GameTest{
             return inv;
         }
 
+        public static void addToInventory(ItemTest i){
+            inventory.add(i);
+        }
+
         public static RoomTest getLocation(){
             return location;
         }
@@ -211,7 +215,6 @@ public class GameTest{
                         else {
                             move(fullCommand[1]);
                         }
-                        move(fullCommand [1]);
                         break;
                     case "EAST", "WEST", "NORTH", "SOUTH", "UP", "DOWN":
                         move(command);
@@ -246,6 +249,49 @@ public class GameTest{
                             GameTest.print("You don't have "+fullCommand[1]+" in your inventory!");
                         }
                         break;
+                    case "OPEN":
+                        if (fullCommand.length < 2){
+                            GameTest.print("Please input something to open.");
+                            break;
+                        }
+                        else if (getInventory().contains(fullCommand[1])){//if inventory contains string name
+                            for (int i = 0; i < inventory.size(); i++){
+                                    inventory.get(i).open();
+                                }
+                            }   
+                        else if (location.hasItem(fullCommand[1])){
+                            location.getItem(fullCommand[1]).open();
+                        }
+                        break;
+                    case "CLOSE":
+                        if (fullCommand.length < 2){
+                            GameTest.print("Please input something to close.");
+                            break;
+                        }
+                        else if (inventory.size() != 0){//if inventory isn't empty
+                            for (int i = 0; i < inventory.size(); i++){
+                                if (getInventory().contains(fullCommand[1])){//if inventory contains string name
+                                    inventory.get(i).close();
+                                }
+                            }   
+                        }
+                        else if (location.hasItem(fullCommand[1])){
+                            location.getItem(fullCommand[1]).close();
+                        }
+                        break;
+                    case "READ":
+                        if (fullCommand.length < 2){
+                            GameTest.print("Please specify what to read.");
+                        }
+                        else if (getInventory().contains(fullCommand[1])){//if inventory isn't empty  
+                            for (int i = 0; i < inventory.size(); i++){//if inventory contains string name
+                                ItemTest it = inventory.get(i);
+                                    if (it.getItemName().equals(fullCommand[1])){
+                                        inventory.get(i).read();
+                                    }
+                                }
+                            }   
+                        break;
                     case "SAVE":
                         saveGame();
                         GameTest.print("Game saved!");
@@ -258,9 +304,6 @@ public class GameTest{
                         break;
                     case "EXIT":
                         GameTest.print("Farewell, see you next time!");
-                        break;
-                    default:
-                        GameTest.print(location.toString());
                         break;
                 }//end input
             }//end while

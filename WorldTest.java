@@ -30,6 +30,7 @@ public class WorldTest {
         //Attic
         Attic.addExit(Bedroom, 5);//5 = down
         Attic.setIsLocked(true);
+        Attic.addItem("SAFE", new Safe());
         
         
         return LivingRoom;//Sets LivingRoom as "currentRoom" for main

@@ -40,7 +40,7 @@ public class RoomTest implements Serializable{
         ItemList.put(name, i);
     }
 
-    public ItemTest getItem (String itemName){
+    public ItemTest getItem(String itemName){
        return ItemList.get(itemName); 
     }
 
