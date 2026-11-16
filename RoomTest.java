@@ -8,7 +8,6 @@ public class RoomTest implements Serializable{
     private String name;//room name
     private RoomTest directions [];
     private boolean isLocked;
-    public static HashMap <String, ItemTest> ItemList = new HashMap<>();
     public static HashMap <String, String> RoomTestMap = new HashMap <>();//key is room name, room desc
     public static HashMap <String, RoomTest> WorldExplored = new HashMap<>();
     
@@ -37,19 +36,19 @@ public class RoomTest implements Serializable{
     }
 
     public void addItem(String name, ItemTest i){//i = item
-        ItemList.put(name, i);
+        ItemTest.ItemList.put(name, i);
     }
 
-    public ItemTest getItem(String itemName){
-       return ItemList.get(itemName); 
+    public ItemTest getRoomItem(String itemName){
+       return ItemTest.ItemList.get(itemName); 
     }
 
     public boolean hasItem(String name){
-        return ItemList.containsKey(name);
+        return ItemTest.ItemList.containsKey(name);
     }
 
     public void removeItem(String name){
-        ItemList.remove(name);
+        ItemTest.ItemList.remove(name);
     }
 
     public boolean checkIsLocked(){

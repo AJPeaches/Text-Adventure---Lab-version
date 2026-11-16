@@ -12,12 +12,12 @@ public class Tool extends ItemTest{
         if (GameTest.location.getName().equals("Bedroom")){ 
             if (GameTest.location.getExit(4).checkIsLocked() == true){
                 if (usedTool == true) {
-                GameTest.print("You already brought down the ladder!");
+                    GameTest.print("You already brought down the ladder!");
                 }
                 else {
-                GameTest.print("You used the tool to open the attic door, and the ladder drops down.");
-                GameTest.location.getExit(4).setIsLocked(false);
-                usedTool = true;
+                    GameTest.print("You used the tool to open the attic door, and the ladder drops down.");
+                    GameTest.location.getExit(4).setIsLocked(false);
+                    usedTool = true;
                 }
             }
         }

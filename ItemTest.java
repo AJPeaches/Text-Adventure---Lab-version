@@ -1,21 +1,28 @@
 package Labs;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 public class ItemTest implements Serializable{
     //variables
     private String itemName;
     private boolean isHeavy = true;
+    public static HashMap <String, ItemTest> ItemList = new HashMap<>();
     //constructor 
     public ItemTest(String n, boolean weight){
         itemName = n;
         isHeavy = weight;
+        ItemList.put(n, this);
     }
 
     public String getItemName(){
         return itemName;
     }
-    
+
+    public static ItemTest getItem(String name){
+        return ItemList.get(name);
+    }
+
     public void setItemName(String whatName){
         itemName = whatName;
     }

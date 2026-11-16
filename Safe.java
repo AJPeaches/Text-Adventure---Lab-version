@@ -23,7 +23,7 @@ public class Safe extends ItemTest{
 
     @Override 
     public void close(){
-        GameTest.print("You shut the safe and it locks without your input. Dangit.");
+        GameTest.print("You shut the safe and it locks with an electric beep. Dangit.");
         safeOpen = false;
     }
 

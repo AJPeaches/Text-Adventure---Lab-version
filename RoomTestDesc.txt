@@ -20,11 +20,11 @@ occupies the far corner.
 The door to the attic is in the ceiling above the pile of
 clothes. You can return south to the living room.
 #
-Kitchen 
+Kitchen
 A medium sized kitchen, with a stainless steel oven and leaky sink. 
 There is the faint stench of old food and mildew. Dishes pile in the sink.
 #
-Garage 
+Garage
 A dinky garage with a rusted car. There's not a chance it works as is, and that's 
 forgetting that you don't have the key.
 #
