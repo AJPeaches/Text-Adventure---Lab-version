@@ -10,6 +10,7 @@ public class RoomTest implements Serializable{
     private boolean isLocked;
     public static HashMap <String, String> RoomTestMap = new HashMap <>();//key is room name, room desc
     public static HashMap <String, RoomTest> WorldExplored = new HashMap<>();
+    public static HashMap <String, NPC> NPCList = new HashMap<>();
     
     public RoomTest (String n) {
     name = n;
@@ -49,6 +50,15 @@ public class RoomTest implements Serializable{
 
     public void removeItem(String name){
         ItemTest.ItemList.remove(name);
+    }
+
+    public void addNPC(String name, NPC npc){
+        NPCList.put(name, npc);
+    }
+
+    public NPC getNPC(String name){
+        GameTest.print("Getting " + name);
+        return NPCList.get(name);
     }
 
     public boolean checkIsLocked(){

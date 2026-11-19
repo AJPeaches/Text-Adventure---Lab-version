@@ -270,7 +270,6 @@ public class GameTest{
                             location.getRoomItem(fullCommand[1]).open();
                         }
                         break;
-
                     case "CLOSE":
                         if (fullCommand.length < 2){
                             GameTest.print("Please input something to close.");
@@ -285,7 +284,6 @@ public class GameTest{
                             location.getRoomItem(fullCommand[1]).close();
                         }
                         break;
-
                     case "READ":
                         if (fullCommand.length < 2){
                             GameTest.print("Please specify what to read.");
@@ -293,6 +291,15 @@ public class GameTest{
                         else if (findInventoryItem(fullCommand[1]) != null){//if inventory isn't empty  
                             ItemTest.getItem(fullCommand[1]).read();
                             }
+                        break;
+                    case "TALK":
+                        if (fullCommand.length < 2){
+                            GameTest.print("Please specify who you're talking to!.");
+                            break;
+                        }
+                        else if(location.getNPC(fullCommand[1]) != null){
+                            location.getNPC(fullCommand[1]).talk();
+                        }
                         break;
                     case "SAVE":
                         saveGame();

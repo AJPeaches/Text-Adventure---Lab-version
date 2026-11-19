@@ -14,6 +14,7 @@ public class WorldTest {
         LivingRoom.addExit(Office, 3);//3 = south
         LivingRoom.addExit(Kitchen, 1);//1 = west
         LivingRoom.addItem("TOOL", new Tool());
+        LivingRoom.addNPC("BLORBOBLEEBUS", new BlorboBleebus());
         //Office
         Office.addExit(LivingRoom, 2);//north
         Office.setIsLocked(true);
