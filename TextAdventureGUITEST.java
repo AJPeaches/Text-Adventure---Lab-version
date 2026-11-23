@@ -1,6 +1,5 @@
 package Labs;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -105,8 +104,6 @@ public class TextAdventureGUITEST {
         roomscroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         roomscroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         outputPanel.add(roomscroll);
-        
-        //outputPanel.add(roomDescArea);
 
         outputArea = new JTextArea();
         //outputArea.setBounds(50, 90, 700, 500);

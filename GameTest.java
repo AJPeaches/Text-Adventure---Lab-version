@@ -1,12 +1,6 @@
 package Labs;
 
 import java.util.Scanner;
-import java.util.stream.Gatherer.Downstream;
-
-import javax.swing.SwingUtilities;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.*;

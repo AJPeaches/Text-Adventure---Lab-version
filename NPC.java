@@ -27,6 +27,10 @@ public class NPC {
         GameTest.print("You cannot talk to " + npcName);
     }
 
+    public void give(ItemTest i){
+        GameTest.print(npcName + "Doesn't want the " + i.getItemName());
+    }
+
     public int getResponse(String[] response){
         String responseList = "";
         for (int i = 0; i < response.length; i++){

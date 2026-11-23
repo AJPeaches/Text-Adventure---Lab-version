@@ -21,14 +21,14 @@ public class Bobo extends NPC{
             case 2:
                 convo2();
                 break;
-            case 3:
-                convo3();
-                break;
-            case 4:
-                convo4();
-                break;
-            case 5:
-                convo5();
+            // case 3:
+            //     convo3();
+            //     break;
+            // case 4:
+            //     convo4();
+            //     break;
+            // case 5:
+            //     convo5();
         }
     }
 

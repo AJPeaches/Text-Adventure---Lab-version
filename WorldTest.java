@@ -21,6 +21,7 @@ public class WorldTest {
         //Kitchen
         Kitchen.addExit(LivingRoom, 0);//0 = east
         Kitchen.addExit(Garage, 1);// west
+        Kitchen.addNPC("FRED", new Fred());
         //Bedroom
         Bedroom.addExit(Attic, 4);//4 = up
         Bedroom.addExit(LivingRoom, 3);
@@ -32,6 +33,7 @@ public class WorldTest {
         Attic.addExit(Bedroom, 5);//5 = down
         Attic.setIsLocked(true);
         Attic.addItem("SAFE", new Safe());
+        Attic.addNPC("BOBO", new Bobo());
         
         
         return LivingRoom;//Sets LivingRoom as "currentRoom" for main
